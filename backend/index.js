@@ -11,6 +11,7 @@ import Transaction from "./models/Transaction.js";
 import Metadata from "./models/Metadata.js";
 import { kpis, products, transactions } from "./data/data.js";
 import kpiRoutes from "./routes/kpi.js";
+import ProductRoutes from "./routes/product.js";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(cors());
 /* ROUTES */
 
 app.use('/kpis',kpiRoutes);
+app.use('/products',ProductRoutes);
 
 async function initializeDatabase() {
   try {
