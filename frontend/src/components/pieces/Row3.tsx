@@ -175,7 +175,7 @@ const Row3 = () => {
                   dataKey="value"
                 >
                   {data.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={pieColors[index]} />
+                    <Cell key={`cell-${index}`} fill={pieColors[index]} className={entry.name} />
                   ))}
                 </Pie>
               </PieChart>
