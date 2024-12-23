@@ -10,7 +10,7 @@ export const api = createApi({
     tagTypes: ["Kpis"],
     endpoints: (build) => ({
         getKpis: build.query<Array<GetKpisResponse>, void>({
-            query: () => "kpi/kpis/",
+            query: () => "kpis",
             providesTags: ["Kpis"],
         }),
     }),
