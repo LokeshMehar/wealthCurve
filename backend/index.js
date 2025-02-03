@@ -35,7 +35,7 @@ app.use('/transactions',TransactionRoutes);
 async function initializeDatabase() {
   try {
     const metadata = await Metadata.findOne({ key: "dbInitialized" });
-
+    
     if (metadata && metadata.value === true) {
       console.log("Database has already been populated.");
       return;
