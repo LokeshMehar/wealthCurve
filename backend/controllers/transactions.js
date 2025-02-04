@@ -1,16 +1,15 @@
 import Transaction from "../models/Transaction.js";
 
 export const getTransactions = async (req, res) => {
-    console.log("aaye");
+    console.log("Fetching transactions...");
     try {
-        const Transactions = await Transaction.find();
-        if (!Transactions) 
-        {
-            return res.status(404).json({ message: "No Transactions found" });
+        const transactions = await Transaction.find();
+        if (!transactions.length) {
+            return res.status(404).json({ message: "No transactions found" });
         }
-        res.status(200).json(Transactions);
+        res.status(200).json(transactions);
     } catch (error) {
-        console.error("Error fetching Transactions:", error);
+        console.error("Error fetching transactions:", error);
         res.status(500).json({ message: "Internal Server Error" });
     }
-}
+};
